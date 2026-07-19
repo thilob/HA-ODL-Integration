@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">ODL-Messwerte</title>
+  <desc id="description">Stilisiertes Messsymbol für ionisierende Strahlung</desc>
+  <circle cx="256" cy="256" r="224" fill="#20252b"/>
+  <g fill="#f4f7fa">
+    <path d="M232 78h48l33 118-57 30-57-30z"/>
+    <path d="M101 337l-24-42 86-87 55 34-3 67z"/>
+    <path d="M411 337l24-42-86-87-55 34 3 67z"/>
+  </g>
+  <circle cx="256" cy="256" r="43" fill="#58c7d8"/>
+  <circle cx="256" cy="256" r="19" fill="#20252b"/>
+</svg>
