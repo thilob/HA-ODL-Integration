@@ -81,6 +81,10 @@ Dieses Projekt ist nicht mit dem Bundesamt für Strahlenschutz verbunden, wird n
 - Die Integration interpretiert oder bewertet die Strahlenwerte nicht.
 - Bei einem vorübergehenden Ausfall der Schnittstelle markiert Home Assistant die Entitäten als nicht verfügbar und versucht den Abruf später erneut.
 
+## Entwicklungsprozess und Vibe Coding
+
+Dieses Projekt wurde in einem KI-gestützten Entwicklungsprozess erstellt und weiterentwickelt, der auch als **Vibe Coding** bezeichnet wird. KI-Werkzeuge unterstützen dabei unter anderem Entwurf, Implementierung, Dokumentation und Tests. Die Verantwortung für veröffentlichte Änderungen, Lizenzangaben und den Betrieb des Projekts verbleibt beim Maintainer. Automatisierte HACS-, Hassfest- und Unit-Test-Prüfungen reduzieren Fehler, können eine vollständige fachliche oder sicherheitstechnische Prüfung jedoch nicht garantieren. Fehler und Verbesserungsvorschläge können über den [GitHub-Issue-Tracker](https://github.com/thilob/HA-ODL-Integration/issues) gemeldet werden.
+
 ## Entwicklung
 
 Tests und Syntaxprüfung:

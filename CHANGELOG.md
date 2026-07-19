@@ -4,6 +4,12 @@ Alle relevanten Änderungen an diesem Projekt werden in dieser Datei dokumentier
 
 Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/), und das Projekt verwendet [Semantic Versioning](https://semver.org/lang/de/).
 
+## [0.2.5] - 2026-07-19
+
+### Hinzugefügt
+
+- transparenter Dokumentationshinweis zum KI-gestützten Entwicklungsprozess („Vibe Coding“)
+
 ## [0.2.4] - 2026-07-19
 
 ### Geändert
@@ -42,3 +48,4 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 [0.2.2]: https://github.com/thilob/HA-ODL-Integration/releases/tag/v0.2.2
 [0.2.3]: https://github.com/thilob/HA-ODL-Integration/releases/tag/v0.2.3
 [0.2.4]: https://github.com/thilob/HA-ODL-Integration/releases/tag/v0.2.4
+[0.2.5]: https://github.com/thilob/HA-ODL-Integration/releases/tag/v0.2.5
