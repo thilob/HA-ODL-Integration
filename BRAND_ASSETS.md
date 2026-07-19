@@ -2,7 +2,7 @@
 
 Die Brand-Icons der Integration wurden für dieses Projekt eigenständig erstellt. Die bearbeitbare Quelle ist [`custom_components/bfs_odl/brand/icon.svg`](custom_components/bfs_odl/brand/icon.svg). `icon.png` und `icon@2x.png` werden ausschließlich aus dieser SVG-Datei gerendert.
 
-Das Motiv ist eine eigene, stilisierte Darstellung einer ODL-Messung. Es verwendet kein Logo, Wappen oder sonstiges Markenzeichen des Bundesamtes für Strahlenschutz, der Bundesrepublik Deutschland, der Internationalen Atomenergie-Organisation oder der Internationalen Organisation für Normung.
+Das Motiv ist eine eigene, stilisierte Darstellung eines Strahlenwarnzeichens. Es verwendet kein Logo, Wappen oder sonstiges Markenzeichen des Bundesamtes für Strahlenschutz, der Bundesrepublik Deutschland, der Internationalen Atomenergie-Organisation oder der Internationalen Organisation für Normung.
 
 Die SVG-Datei und die daraus erzeugten PNG-Dateien stehen wie der übrige selbst erstellte Projektcode unter der MIT-Lizenz; siehe [`LICENSE`](LICENSE).
 
