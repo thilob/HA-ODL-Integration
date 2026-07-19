@@ -4,6 +4,18 @@ Alle relevanten Änderungen an diesem Projekt werden in dieser Datei dokumentier
 
 Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/), und das Projekt verwendet [Semantic Versioning](https://semver.org/lang/de/).
 
+## [0.2.6] - 2026-07-19
+
+### Hinzugefügt
+
+- persistenter 48-Stunden-Cache für den vollständigen Messstellen-Auswahlkatalog
+- serverseitiger OGC-WFS-Filter für aktuelle Messwerte der ausgewählten Stationen
+- Rückgriff auf einen vorhandenen älteren Katalog bei vorübergehenden Schnittstellenfehlern
+
+### Geändert
+
+- regelmäßige Aktualisierungen übertragen nur noch die ausgewählten Stationen statt des vollständigen Messnetzes
+
 ## [0.2.5] - 2026-07-19
 
 ### Hinzugefügt
@@ -49,3 +61,4 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 [0.2.3]: https://github.com/thilob/HA-ODL-Integration/releases/tag/v0.2.3
 [0.2.4]: https://github.com/thilob/HA-ODL-Integration/releases/tag/v0.2.4
 [0.2.5]: https://github.com/thilob/HA-ODL-Integration/releases/tag/v0.2.5
+[0.2.6]: https://github.com/thilob/HA-ODL-Integration/releases/tag/v0.2.6

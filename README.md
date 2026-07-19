@@ -6,7 +6,7 @@ Eine inoffizielle Home-Assistant-Custom-Integration für die öffentliche ODL-Da
 
 ## Funktionen
 
-- lädt die vollständige Messstellenliste paginiert aus dem Layer `odlinfo_odl_1h_latest`
+- lädt die vollständige Messstellenliste paginiert und speichert den Auswahlkatalog 48 Stunden persistent zwischen
 - Auswahl einer oder mehrerer Messstellen im Home-Assistant-Konfigurationsdialog
 - Änderung der Auswahl über **Konfigurieren** ohne YAML
 - gemeinsamer, ressourcenschonender Datenabruf über einen `DataUpdateCoordinator`
@@ -55,7 +55,9 @@ Verwendeter WFS-Layer:
 opendata:odlinfo_odl_1h_latest
 ```
 
-Da die Schnittstelle mehr als 1.000 Stationen liefern kann, ruft die Integration die Daten mit `maxFeatures=1000` und fortlaufendem `startIndex` ab. Die ausgewählten Stationen werden anschließend lokal herausgefiltert. Dadurch entstehen unabhängig von der Zahl ausgewählter Stationen nur wenige Sammelabfragen pro Aktualisierung.
+Da die Schnittstelle mehr als 1.000 Stationen liefern kann, wird der vollständige Messstellenkatalog bei Bedarf mit `maxFeatures=1000` und fortlaufendem `startIndex` geladen. Dieser Katalog enthält nur die für den Auswahldialog benötigten Bezeichnungen und wird 48 Stunden persistent im Home-Assistant-Storage zwischengespeichert. Der Cache übersteht damit Integrations-Reloads und Home-Assistant-Neustarts. Ist eine Aktualisierung vorübergehend nicht möglich, bleibt ein vorhandener älterer Katalog für die Konfiguration nutzbar.
+
+Die regelmäßige Messwertaktualisierung verwendet den Katalogcache nicht. Sie fragt die aktuell ausgewählten Messstellen mit einem serverseitigen OGC-WFS-Filter direkt aus dem Layer `odlinfo_odl_1h_latest` ab. Dadurch bleiben die Messwerte aktuell, während pro Poll nur die benötigten Stationen übertragen werden.
 
 ## Datenquelle und Datenlizenz
 

@@ -44,15 +44,10 @@ class ODLDataUpdateCoordinator(DataUpdateCoordinator[dict[str, ODLStation]]):
 
     async def _async_update_data(self) -> dict[str, ODLStation]:
         try:
-            all_stations = await self.api.async_get_stations()
+            selected = await self.api.async_get_stations(self.selected_station_ids)
         except ODLApiError as err:
             raise UpdateFailed(str(err)) from err
 
-        selected = {
-            station_id: station
-            for station_id, station in all_stations.items()
-            if station_id in self.selected_station_ids
-        }
         missing = self.selected_station_ids - selected.keys()
         if missing:
             _LOGGER.warning(

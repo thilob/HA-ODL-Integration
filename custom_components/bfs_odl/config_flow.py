@@ -11,7 +11,6 @@ import voluptuous as vol
 
 from homeassistant.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlowWithReload
 from homeassistant.core import callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.selector import (
     NumberSelector,
     NumberSelectorConfig,
@@ -21,7 +20,8 @@ from homeassistant.helpers.selector import (
     SelectSelectorMode,
 )
 
-from .api import ODLApiClient, ODLApiError
+from .api import ODLApiError
+from .catalog import get_station_catalog
 from .const import (
     CONF_SCAN_INTERVAL,
     CONF_STATIONS,
@@ -31,16 +31,13 @@ from .const import (
     MIN_SCAN_INTERVAL,
     NAME,
 )
-from .models import ODLStation
-
-
 class ODLConfigFlow(ConfigFlow, domain=DOMAIN):
     """Handle an ODL config flow."""
 
     VERSION = 1
 
     def __init__(self) -> None:
-        self._stations: dict[str, ODLStation] = {}
+        self._stations: dict[str, str] = {}
 
     async def async_step_user(
         self, user_input: dict[str, Any] | None = None
@@ -52,9 +49,9 @@ class ODLConfigFlow(ConfigFlow, domain=DOMAIN):
         errors: dict[str, str] = {}
         if not self._stations:
             try:
-                self._stations = await ODLApiClient(
-                    async_get_clientsession(self.hass)
-                ).async_get_stations()
+                self._stations = await get_station_catalog(
+                    self.hass
+                ).async_get_station_options()
             except ODLApiError:
                 errors["base"] = "cannot_connect"
 
@@ -90,9 +87,9 @@ class ODLOptionsFlow(OptionsFlowWithReload):
     ) -> ConfigFlowResult:
         errors: dict[str, str] = {}
         try:
-            stations = await ODLApiClient(
-                async_get_clientsession(self.hass)
-            ).async_get_stations()
+            stations = await get_station_catalog(
+                self.hass
+            ).async_get_station_options()
         except ODLApiError:
             stations = {}
             errors["base"] = "cannot_connect"
@@ -114,14 +111,14 @@ class ODLOptionsFlow(OptionsFlowWithReload):
 
 
 def _build_schema(
-    stations: dict[str, ODLStation],
+    stations: dict[str, str],
     selected: list[str],
     scan_interval: int,
 ) -> vol.Schema:
     options = [
-        {"value": station.kenn, "label": station.display_name}
-        for station in sorted(
-            stations.values(), key=lambda item: (item.name.casefold(), item.kenn)
+        {"value": station_id, "label": label}
+        for station_id, label in sorted(
+            stations.items(), key=lambda item: (item[1].casefold(), item[0])
         )
     ]
     return vol.Schema(
