@@ -4,6 +4,14 @@ Alle relevanten Änderungen an diesem Projekt werden in dieser Datei dokumentier
 
 Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/), und das Projekt verwendet [Semantic Versioning](https://semver.org/lang/de/).
 
+## [0.2.3] - 2026-07-19
+
+### Geändert
+
+- interne Produkt- und Codebezeichnungen auf die neutrale Form „ODL-Integration“ vereinheitlicht
+- sachliche BfS-Nennung auf Datenquelle, Datenbereitsteller und Lizenzhinweise beschränkt
+- unzutreffende Verwendung des Datenbereitstellers als Gerätehersteller entfernt
+
 ## [0.2.2] - 2026-07-19
 
 ### Geändert
@@ -25,3 +33,4 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 
 [0.2.1]: https://github.com/thilob/HA-ODL-Integration/releases/tag/v0.2.1
 [0.2.2]: https://github.com/thilob/HA-ODL-Integration/releases/tag/v0.2.2
+[0.2.3]: https://github.com/thilob/HA-ODL-Integration/releases/tag/v0.2.3

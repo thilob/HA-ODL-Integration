@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2026 Thilo Berger
 # SPDX-License-Identifier: MIT
 
-"""Data models for the BfS ODL integration."""
+"""Data models for the ODL integration."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ from typing import Any
 
 @dataclass(frozen=True, slots=True)
 class ODLStation:
-    """A BfS ODL measuring station and its latest values."""
+    """An ODL measuring station and its latest values."""
 
     kenn: str
     international_id: str | None

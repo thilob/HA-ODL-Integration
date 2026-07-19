@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2026 Thilo Berger
 # SPDX-License-Identifier: MIT
 
-"""Update coordinator for BfS ODL."""
+"""Update coordinator for ODL."""
 
 from __future__ import annotations
 
@@ -56,7 +56,7 @@ class ODLDataUpdateCoordinator(DataUpdateCoordinator[dict[str, ODLStation]]):
         missing = self.selected_station_ids - selected.keys()
         if missing:
             _LOGGER.warning(
-                "Selected BfS ODL stations are currently absent from the API: %s",
+                "Selected ODL stations are currently absent from the data service: %s",
                 ", ".join(sorted(missing)),
             )
         return selected

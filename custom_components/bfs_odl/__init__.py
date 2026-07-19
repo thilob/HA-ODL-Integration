@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2026 Thilo Berger
 # SPDX-License-Identifier: MIT
 
-"""BfS ODL measuring network integration."""
+"""ODL measuring network integration."""
 
 from __future__ import annotations
 
@@ -24,7 +24,7 @@ class ODLRuntimeData:
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
-    """Set up BfS ODL from a config entry."""
+    """Set up ODL from a config entry."""
     api = ODLApiClient(async_get_clientsession(hass))
     coordinator = ODLDataUpdateCoordinator(hass, entry, api)
     await coordinator.async_config_entry_first_refresh()
@@ -35,5 +35,5 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
-    """Unload a BfS ODL config entry."""
+    """Unload an ODL config entry."""
     return await hass.config_entries.async_unload_platforms(entry, PLATFORMS)

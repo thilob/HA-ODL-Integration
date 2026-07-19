@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2026 Thilo Berger
 # SPDX-License-Identifier: MIT
 
-"""Async client for the public BfS ODL WFS interface."""
+"""Async client for the public ODL WFS interface."""
 
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ REQUEST_TIMEOUT = 30
 
 
 class ODLApiError(Exception):
-    """Base exception for BfS ODL communication errors."""
+    """Base exception for ODL communication errors."""
 
 
 class ODLApiClient:
@@ -37,7 +37,7 @@ class ODLApiClient:
             payload = await self._async_get_page(start_index)
             features = payload.get("features")
             if not isinstance(features, list):
-                raise ODLApiError("BfS response contains no GeoJSON feature list")
+                raise ODLApiError("ODL response contains no GeoJSON feature list")
 
             for feature in features:
                 if not isinstance(feature, dict):
@@ -62,7 +62,7 @@ class ODLApiClient:
                 break
 
         if not stations:
-            raise ODLApiError("BfS returned no usable ODL measuring stations")
+            raise ODLApiError("ODL data service returned no usable measuring stations")
         return stations
 
     async def _async_get_page(self, start_index: int) -> dict[str, Any]:
@@ -82,10 +82,10 @@ class ODLApiClient:
                 response.raise_for_status()
                 payload = await response.json(content_type=None)
         except (TimeoutError, ClientError, ValueError) as err:
-            raise ODLApiError(f"Error retrieving BfS ODL data: {err}") from err
+            raise ODLApiError(f"Error retrieving ODL data: {err}") from err
 
         if not isinstance(payload, dict):
-            raise ODLApiError("Unexpected BfS response format")
+            raise ODLApiError("Unexpected ODL response format")
         return payload
 
 

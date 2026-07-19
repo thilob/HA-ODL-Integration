@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2026 Thilo Berger
 # SPDX-License-Identifier: MIT
 
-"""Sensor entities for BfS ODL stations."""
+"""Sensor entities for ODL stations."""
 
 from __future__ import annotations
 
@@ -166,7 +166,6 @@ class ODLStationSensor(CoordinatorEntity[ODLDataUpdateCoordinator], SensorEntity
         info: DeviceInfo = DeviceInfo(
             identifiers={(DOMAIN, self.station_id)},
             name=f"ODL {name}",
-            manufacturer="Bundesamt für Strahlenschutz",
             model="ODL-Messstelle",
             configuration_url=(
                 "https://odlinfo.bfs.de/ODL/DE/themen/wo-stehen-die-sonden/"

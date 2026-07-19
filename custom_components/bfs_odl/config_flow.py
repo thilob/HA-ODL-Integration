@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2026 Thilo Berger
 # SPDX-License-Identifier: MIT
 
-"""Config flow for BfS ODL."""
+"""Config flow for ODL."""
 
 from __future__ import annotations
 
@@ -35,7 +35,7 @@ from .models import ODLStation
 
 
 class ODLConfigFlow(ConfigFlow, domain=DOMAIN):
-    """Handle a BfS ODL config flow."""
+    """Handle an ODL config flow."""
 
     VERSION = 1
 

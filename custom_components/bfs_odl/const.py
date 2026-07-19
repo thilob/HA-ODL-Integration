@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2026 Thilo Berger
 # SPDX-License-Identifier: MIT
 
-"""Constants for the BfS ODL integration."""
+"""Constants for the ODL integration."""
 
 from datetime import timedelta
 

@@ -1,4 +1,4 @@
-"""Tests for BfS ODL GeoJSON model parsing."""
+"""Tests for ODL GeoJSON model parsing."""
 
 from __future__ import annotations
 
