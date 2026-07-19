@@ -1,0 +1,58 @@
+{
+  "title": "ODL-Messwerte für Home Assistant",
+  "config": {
+    "step": {
+      "user": {
+        "title": "ODL-Messstellen auswählen",
+        "description": "Wähle eine oder mehrere Messstellen aus. Die Liste wird live vom Bundesamt für Strahlenschutz geladen. Datenquelle: BfS; Lizenz: Datenlizenz Deutschland – Namensnennung – Version 2.0 (dl-de/by-2-0).",
+        "data": {
+          "stations": "Messstellen",
+          "scan_interval": "Abrufintervall"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Die Datenschnittstelle des BfS konnte nicht erreicht oder verarbeitet werden."
+    },
+    "abort": {
+      "already_configured": "ODL-Messwerte für Home Assistant ist bereits eingerichtet."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "ODL-Messwerte konfigurieren",
+        "description": "Passe die ausgewählten Messstellen und das Abrufintervall an.",
+        "data": {
+          "stations": "Messstellen",
+          "scan_interval": "Abrufintervall"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Die Datenschnittstelle des BfS konnte nicht erreicht oder verarbeitet werden."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "dose_rate": {
+        "name": "Ortsdosisleistung"
+      },
+      "cosmic_dose_rate": {
+        "name": "Kosmischer Anteil"
+      },
+      "terrestrial_dose_rate": {
+        "name": "Terrestrischer Anteil"
+      },
+      "measurement_end": {
+        "name": "Messzeitpunkt"
+      },
+      "station_status": {
+        "name": "Stationsstatus"
+      },
+      "validation_status": {
+        "name": "Prüfstatus"
+      }
+    }
+  }
+}

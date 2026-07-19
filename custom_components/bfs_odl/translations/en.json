@@ -1,0 +1,58 @@
+{
+  "title": "ODL Measurements for Home Assistant",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Select ODL stations",
+        "description": "Select one or more stations. The list is loaded live from the German Federal Office for Radiation Protection (BfS). Data license: Data licence Germany – attribution – version 2.0 (dl-de/by-2-0).",
+        "data": {
+          "stations": "Stations",
+          "scan_interval": "Polling interval"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "The BfS data interface could not be reached or processed."
+    },
+    "abort": {
+      "already_configured": "ODL Measurements for Home Assistant is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Configure ODL measurements",
+        "description": "Change selected stations and the polling interval.",
+        "data": {
+          "stations": "Stations",
+          "scan_interval": "Polling interval"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "The BfS data interface could not be reached or processed."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "dose_rate": {
+        "name": "Ambient dose rate"
+      },
+      "cosmic_dose_rate": {
+        "name": "Cosmic contribution"
+      },
+      "terrestrial_dose_rate": {
+        "name": "Terrestrial contribution"
+      },
+      "measurement_end": {
+        "name": "Measurement time"
+      },
+      "station_status": {
+        "name": "Station status"
+      },
+      "validation_status": {
+        "name": "Validation status"
+      }
+    }
+  }
+}
