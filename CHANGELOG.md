@@ -4,6 +4,13 @@ Alle relevanten Änderungen an diesem Projekt werden in dieser Datei dokumentier
 
 Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/), und das Projekt verwendet [Semantic Versioning](https://semver.org/lang/de/).
 
+## [0.2.4] - 2026-07-19
+
+### Geändert
+
+- Zeitpunkt der täglichen Repository-Validierung angepasst
+- Beschreibung des eigenständig erstellten Brand-Motivs präzisiert
+
 ## [0.2.3] - 2026-07-19
 
 ### Geändert
@@ -34,3 +41,4 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 [0.2.1]: https://github.com/thilob/HA-ODL-Integration/releases/tag/v0.2.1
 [0.2.2]: https://github.com/thilob/HA-ODL-Integration/releases/tag/v0.2.2
 [0.2.3]: https://github.com/thilob/HA-ODL-Integration/releases/tag/v0.2.3
+[0.2.4]: https://github.com/thilob/HA-ODL-Integration/releases/tag/v0.2.4

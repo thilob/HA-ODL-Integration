@@ -8,5 +8,5 @@
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/thilob/HA-ODL-Integration/issues",
   "requirements": [],
-  "version": "0.2.3"
+  "version": "0.2.4"
 }
