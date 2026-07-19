@@ -3,18 +3,37 @@ name: Validate
 on:
   push:
   pull_request:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions: {}
 
 jobs:
   hacs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: hacs/action@main
+      - name: HACS validation
+        uses: hacs/action@main
         with:
           category: integration
 
   hassfest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: home-assistant/actions/hassfest@master
+      - name: Hassfest validation
+        uses: home-assistant/actions/hassfest@master
+
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Compile integration
+        run: python -m compileall -q custom_components/bfs_odl

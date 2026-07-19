@@ -1,7 +1,7 @@
 {
   "domain": "bfs_odl",
   "name": "ODL-Messwerte für Home Assistant",
-  "codeowners": [],
+  "codeowners": ["@thilob"],
   "config_flow": true,
   "documentation": "https://github.com/thilob/HA-ODL-Integration",
   "integration_type": "service",

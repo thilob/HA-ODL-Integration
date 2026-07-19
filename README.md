@@ -2,6 +2,8 @@
 
 Eine inoffizielle Home-Assistant-Custom-Integration für die öffentliche ODL-Datenschnittstelle des Bundesamtes für Strahlenschutz (BfS).
 
+[![HACS öffnen](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=thilob&repository=HA-ODL-Integration&category=integration)
+
 ## Funktionen
 
 - lädt die vollständige Messstellenliste paginiert aus dem Layer `odlinfo_odl_1h_latest`
@@ -29,9 +31,15 @@ Eine inoffizielle Home-Assistant-Custom-Integration für die öffentliche ODL-Da
 
 ## Installation über HACS als benutzerdefiniertes Repository
 
-1. In HACS **Benutzerdefinierte Repositories** öffnen.
-2. `https://github.com/thilob/HA-ODL-Integration` eintragen und als Kategorie **Integration** wählen.
-3. Integration herunterladen, Home Assistant neu starten und anschließend über **Geräte & Dienste** einrichten.
+1. Den Button **HACS öffnen** oben verwenden oder in HACS **Benutzerdefinierte Repositories** öffnen.
+2. Falls das Repository manuell hinzugefügt wird, `https://github.com/thilob/HA-ODL-Integration` eintragen und als Kategorie **Integration** wählen.
+3. Die Integration herunterladen.
+4. Home Assistant vollständig neu starten.
+5. Unter **Einstellungen → Geräte & Dienste → Integration hinzufügen** nach **ODL-Messwerte für Home Assistant** suchen und die gewünschten Messstellen auswählen.
+
+## Aktualisierung
+
+Updates werden in HACS angezeigt und können dort installiert werden. Nach jeder Aktualisierung der Integration muss Home Assistant neu gestartet werden. Änderungen an Messstellenauswahl und Abrufintervall sind anschließend über **Konfigurieren** möglich und lösen automatisch ein Neuladen mit sofortigem Datenabruf aus.
 
 ## Datenabruf
 
@@ -75,10 +83,11 @@ Dieses Projekt ist nicht mit dem Bundesamt für Strahlenschutz verbunden, wird n
 
 ## Entwicklung
 
-Syntaxprüfung:
+Tests und Syntaxprüfung:
 
 ```bash
+python -m unittest discover -s tests -v
 python -m compileall custom_components/bfs_odl
 ```
 
-Für ein öffentliches HACS-Repository sollten zusätzlich die HACS- und Hassfest-GitHub-Actions aktiviert werden.
+Änderungen werden auf GitHub automatisch mit HACS, Hassfest und den Unit-Tests validiert. Veröffentlichte Änderungen sind im [`CHANGELOG.md`](CHANGELOG.md) dokumentiert.
